@@ -1,9 +1,11 @@
-#### php-dev-docker 通过docker compose编排的php7.1开发环境；使用简便，部署快捷，并且可以有效的统一团队开发环境。
+#### php-dev-docker 通过docker compose编排的php7.1开发环境；
+
+使用docker hub官方镜像，方便修改php版本，部署快捷，并且可以有效的统一团队开发环境。
 
 比如当有新的扩展加入，或者其他工具加入时，只需要将新扩展变更到源文件，其他开发者拉取最新代码重新编译就可以保持环境一致。
 
 ## 环境内容
-- php-fpm7.1
+- php-fpm7.1 `使用阿里云镜像`
 - mysql5.6
 - nginx
 - redis
@@ -15,11 +17,14 @@ swoole、redis、pdo_mysql、mysqli、gd、zip、 openssl、 mbstring
 
 ## 启动：
 
+> 由于加入gitignore所以需要手动创建`./data/log/nginx_error.log`
+
 ```
 > docker-compose up --build
 #docker-compose up -d //守护进程
 #docker-compose up -d --build //重新编译启动
 ```
+
 首次编译可能需要较长时间，编译启动后通过浏览器访问localhost 或者 宿主机ip就可以看到php环境信息。
 
 ## 环境目录结构
