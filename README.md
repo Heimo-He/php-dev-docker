@@ -1,4 +1,4 @@
-#### php-dev-docker 通过docker compose编排的php7.1开发环境；
+#### php-dev-docker 通过docker compose编排的php7.1+mysql5.6+nginx+redis开发环境；
 
 使用docker hub官方镜像，方便修改php版本，部署快捷，并且可以有效的统一团队开发环境。
 
