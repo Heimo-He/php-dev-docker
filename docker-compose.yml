@@ -1,0 +1,40 @@
+version: "3"
+services:
+  nginx:
+    build: ./nginx
+    container_name: nginx_server
+    restart: always
+    ports:
+      - "80:80"
+    volumes:
+      - ./www/:/var/www/html
+      - ./nginx/conf.d/:/etc/nginx/conf.d
+      - ./data/log/nginx_error.log:/var/log/nginx/error.log #./data/log/nginx_error.log由于加入gitignore所以需要手动创建这个文件
+      - ./data/log/:/home/wwwlogs
+  phpfpm7.1:
+    build: ./phpfpm
+    container_name: phpfpm_server
+    restart: always
+    ports:
+      - "9000:9000"
+    volumes:
+       - ./work/:/var/www/html
+  mysql:
+    build: ./mysql
+    container_name: mysql_server
+    restart: always
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci #设置utf8字符集
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+    volumes:
+      - ./data/mysql:/var/lib/mysql
+  redis:
+    build: ./redis
+    container_name: redis_server
+    restart: always
+    volumes:
+      - ./data/redis:/data
+    ports:
+      - "6379:6379"
