@@ -34,16 +34,9 @@ swoole、redis、pdo_mysql、mysqli、gd、zip、 openssl、 mbstring
 │  docker-compose.yml       //compose环境编排文件
 ├─data      //数据文件 主要用来数据卷挂载
 │  ├─log    //nginx 日志文件;网站访问日志文件
-│  │      nginx_error.log   //nginx error日志文件
+│  │      nginx_error.log   //nginx error日志文件，已加入gitignore需要手动创建
 │  ├─mysql  //mysql 数据文件
-│  │  │  auto.cnf
-│  │  │  ibdata1
-│  │  │  ib_logfile0
-│  │  │  ib_logfile1
-│  │  ├─mysql //mysql 数据库
-│  │  └─performance_schema 
 │  └─redis //redis数据
-│          dump.rdb
 ├─mysql  //mysql Dockerfile文件 包含基础镜像
 │      Dockerfile
 ├─nginx     //nginx Dockerfile文件
