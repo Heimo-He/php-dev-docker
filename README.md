@@ -10,17 +10,23 @@
 - nginx
 - redis
 
-php已安装扩展
-```
-swoole、redis、pdo_mysql、mysqli、gd、zip、 openssl、 mbstring 
-```
+## php已安装扩展
+
+- swoole
+- redis
+- pdo_mysql
+- mysqli
+- gd
+- zip
+- openssl
+- mbstring 
 
 ## 启动：
 
 > 由于加入gitignore所以需要手动创建`./data/log/nginx_error.log`
 
 ```
-> docker-compose up --build
+docker-compose up --build
 #docker-compose up -d //守护进程
 #docker-compose up -d --build //重新编译启动
 ```
