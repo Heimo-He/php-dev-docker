@@ -5,7 +5,7 @@
 比如当有新的扩展加入，或者其他工具加入时，只需要将新扩展变更到源文件，其他开发者拉取最新代码重新编译就可以保持环境一致。
 
 ## 环境内容
-- php-fpm7.1 `使用阿里云镜像` [docker hub编译好的镜像地址](https://hub.docker.com/r/heimohe/php-dev-docker)
+- php-fpm7.1 `Deibian改为阿里云镜像` [docker hub编译好的镜像地址](https://hub.docker.com/r/heimohe/php-dev-docker)
 - mysql5.6
 - nginx
 - redis
@@ -26,7 +26,7 @@
 > 由于加入gitignore所以需要手动创建`./data/log/nginx_error.log`
 
 ```
-docker-compose up --build
+> docker-compose up --build
 #docker-compose up -d //守护进程
 #docker-compose up -d --build //重新编译启动
 ```
@@ -50,17 +50,16 @@ docker-compose up --build
 │  │  enable-php.conf
 │  │  nginx.conf //nginx配置文件
 │  └─conf.d //虚拟主机配置目录，如果需要监听其他端口，
-            //则需要在docker-compose.yml 中的nginx下开放映射端口，比如 10000:10000
-│          default.conf //默认配置文件
-│          managez.com.conf //虚拟主机实例文件
+│           //则需要在docker-compose.yml 中的nginx下开放映射端
+│         default.conf //默认配置文件
 ├─phpfpm //nginx Dockerfile文件
 │  │  Dockerfile //包含基础镜像 以及一些自定义指令 （php扩展）
 │  └─conf
-│          php.ini
+│        php.ini
 ├─redis //nginx Dockerfile文件
 │  │  Dockerfile
 │  └─conf
-│            redis.conf 
+│        redis.conf 
 └─www   //项目目录
    │  50x.html
    │  index.html
