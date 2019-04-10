@@ -40,7 +40,7 @@
 │  docker-compose.yml       //compose环境编排文件
 ├─data      //数据文件 主要用来数据卷挂载
 │  ├─log    //nginx 日志文件;网站访问日志文件
-│  │      nginx_error.log   //nginx error日志文件，已加入gitignore需要手动创建
+│  │  └─nginx_error.log   //nginx error日志文件，已加入gitignore需要手动创建
 │  ├─mysql  //mysql 数据文件
 │  └─redis //redis数据
 ├─mysql  //mysql Dockerfile文件 包含基础镜像
@@ -50,17 +50,16 @@
 │  │  enable-php.conf
 │  │  nginx.conf //nginx配置文件
 │  └─conf.d //虚拟主机配置目录，如果需要监听其他端口，
-            //则需要在docker-compose.yml 中的nginx下开放映射端口，比如 10000:10000
+            //则需要在docker-compose.yml 中的nginx下开放映射端
 │          default.conf //默认配置文件
-│          managez.com.conf //虚拟主机实例文件
 ├─phpfpm //nginx Dockerfile文件
 │  │  Dockerfile //包含基础镜像 以及一些自定义指令 （php扩展）
 │  └─conf
-│          php.ini
+│     └─php.ini
 ├─redis //nginx Dockerfile文件
 │  │  Dockerfile
 │  └─conf
-│            redis.conf 
+│     └─redis.conf 
 └─www   //项目目录
    │  50x.html
    │  index.html
