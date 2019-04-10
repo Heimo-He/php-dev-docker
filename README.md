@@ -5,22 +5,28 @@
 比如当有新的扩展加入，或者其他工具加入时，只需要将新扩展变更到源文件，其他开发者拉取最新代码重新编译就可以保持环境一致。
 
 ## 环境内容
-- php-fpm7.1 `使用阿里云镜像`
+- php-fpm7.1 `使用阿里云镜像` [docker hub编译好的镜像地址](https://hub.docker.com/r/heimohe/php-dev-docker)
 - mysql5.6
 - nginx
 - redis
 
-php已安装扩展
-```
-swoole、redis、pdo_mysql、mysqli、gd、zip、 openssl、 mbstring 
-```
+## php已安装扩展
+
+- swoole
+- redis
+- pdo_mysql
+- mysqli
+- gd
+- zip
+- openssl
+- mbstring 
 
 ## 启动：
 
 > 由于加入gitignore所以需要手动创建`./data/log/nginx_error.log`
 
 ```
-> docker-compose up --build
+docker-compose up --build
 #docker-compose up -d //守护进程
 #docker-compose up -d --build //重新编译启动
 ```
