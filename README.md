@@ -5,7 +5,9 @@
 比如当有新的扩展加入，或者其他工具加入时，只需要将新扩展变更到源文件，其他开发者拉取最新代码重新编译就可以保持环境一致。
 
 ## 环境内容
-- php-fpm7.1 `使用阿里云镜像` [docker hub编译好的镜像地址](https://hub.docker.com/r/heimohe/php-dev-docker)
+- php-fpm7.1 
+ - `Deibian改为阿里云镜像`
+ - [docker hub编译好的镜像地址](https://hub.docker.com/r/heimohe/php-dev-docker)
 - mysql5.6
 - nginx
 - redis
