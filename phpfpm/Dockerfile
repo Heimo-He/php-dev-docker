@@ -30,3 +30,5 @@ RUN sed -i 's/deb.debian.org/mirrors.aliyun.com/g' /etc/apt/sources.list \
     && docker-php-ext-enable swoole \
     && pecl install redis \
     && docker-php-ext-enable redis
+    && pecl install zip \
+    && docker-php-ext-enable zip
