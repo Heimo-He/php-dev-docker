@@ -31,4 +31,8 @@ RUN sed -i 's/deb.debian.org/mirrors.aliyun.com/g' /etc/apt/sources.list \
     && pecl install redis \
     && docker-php-ext-enable redis
     && pecl install zip \
-    && docker-php-ext-enable zip
+    && docker-php-ext-enable zip \
+#    全局安装composer包管理器-begin
+    && curl -sS https://getcomposer.org/installer | php \
+    && mv composer.phar /usr/local/bin/composer
+#    全局安装composer包管理器-end
