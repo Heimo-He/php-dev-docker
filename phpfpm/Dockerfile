@@ -29,7 +29,7 @@ RUN sed -i 's/deb.debian.org/mirrors.aliyun.com/g' /etc/apt/sources.list \
     && pecl install swoole \
     && docker-php-ext-enable swoole \
     && pecl install redis \
-    && docker-php-ext-enable redis
+    && docker-php-ext-enable redis \
     && pecl install zip \
     && docker-php-ext-enable zip \
 #    全局安装composer包管理器-begin
