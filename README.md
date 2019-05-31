@@ -56,7 +56,8 @@
 ├─phpfpm //nginx Dockerfile文件
 │  │  Dockerfile //包含基础镜像 以及一些自定义指令 （php扩展）
 │  └─conf
-│        php.ini
+│     │  php.ini
+│     └─www.conf
 ├─redis //nginx Dockerfile文件
 │  │  Dockerfile
 │  └─conf
