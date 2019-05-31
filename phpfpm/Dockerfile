@@ -1,5 +1,6 @@
 FROM  php:7.1-fpm
 COPY ./conf/php.ini /usr/local/etc/php/php.ini
+COPY ./conf/www.conf /usr/local/etc/php-fpm.d/www.conf
 #    更改为阿里云镜像
 RUN sed -i 's/deb.debian.org/mirrors.aliyun.com/g' /etc/apt/sources.list \
     && apt-get update && apt-get install -y \
