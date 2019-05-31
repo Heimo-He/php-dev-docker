@@ -23,11 +23,17 @@ RUN sed -i 's/deb.debian.org/mirrors.aliyun.com/g' /etc/apt/sources.list \
     && rm -rf /var/www/html/openssl-1.1.1b \
 #    需要openssl扩展取消以下注释-end
     && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-png-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
-    && docker-php-ext-install gd \
+    && docker-php-ext-install -j$(nproc) gd \
     && docker-php-ext-install mysqli \
     && docker-php-ext-install pdo_mysql \
     && docker-php-ext-install mbstring \
     && pecl install swoole \
     && docker-php-ext-enable swoole \
     && pecl install redis \
-    && docker-php-ext-enable redis
+    && docker-php-ext-enable redis \
+    && pecl install zip \
+    && docker-php-ext-enable zip \
+#    全局安装composer包管理器-begin
+    && curl -sS https://getcomposer.org/installer | php \
+    && mv composer.phar /usr/local/bin/composer
+#    全局安装composer包管理器-end
