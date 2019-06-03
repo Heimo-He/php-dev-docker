@@ -65,7 +65,7 @@
 └─www   //项目目录
    │  50x.html
    │  index.html
-   └─index.php //测试文件
+   └─phpinfo.php //测试文件
 ```
 
 ## 常用命令
