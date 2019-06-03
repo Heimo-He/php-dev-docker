@@ -3,6 +3,7 @@ COPY ./conf/php.ini /usr/local/etc/php/php.ini
 COPY ./conf/www.conf /usr/local/etc/php-fpm.d/www.conf
 #    更改为阿里云镜像
 RUN sed -i 's/deb.debian.org/mirrors.aliyun.com/g' /etc/apt/sources.list \
+    && cd /usr/lib/apt/methods && ln -s http https \
     && apt-get update && apt-get install -y \
     openssl \
     libfreetype6-dev \
