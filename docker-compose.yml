@@ -9,8 +9,7 @@ services:
     volumes:
       - ./www/:/var/www/html
       - ./nginx/conf.d/:/etc/nginx/conf.d
-      - ./data/log/nginx_error.log:/var/log/nginx/error.log #./data/log/nginx_error.log由于加入gitignore所以需要手动创建这个文件
-      - ./data/log/:/home/wwwlogs
+      - ./data/log/:/home/wwwlogs #./data/log/nginx_error.log由于加入gitignore所以需要手动创建这个文件
   phpfpm7.1:
     build: ./phpfpm
     container_name: phpfpm_server
