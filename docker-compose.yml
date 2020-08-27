@@ -11,7 +11,7 @@ services:
       - ./nginx/conf.d/:/etc/nginx/conf.d
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf
       - ./nginx/enable-php.conf:/etc/nginx/enable-php.conf
-      - ./data/log/:/home/wwwlogs #./data/log/nginx_error.log由于加入gitignore所以需要手动创建这个文件
+      - ./data/log/:/home/wwwlogs
   phpfpm7.1:
     build: ./phpfpm
     container_name: phpfpm_server

@@ -23,8 +23,6 @@
 
 ## 启动：
 
-> 由于加入gitignore所以需要手动创建`./data/log/nginx_error.log`
-
 ```
 > sudo systemctl start docker //启动docker
 > docker-compose up --build
